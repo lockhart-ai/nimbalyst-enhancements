@@ -145,6 +145,87 @@
   white-space: nowrap;
 }
 
+/* Hover card with the full tool call, portaled to <body>. */
+.enhancements-tool-tooltip {
+  position: fixed;
+  z-index: 9999;
+  max-height: 70vh;
+  overflow: hidden;
+  padding: 10px 12px;
+  border: 1px solid var(--nim-border);
+  border-radius: 6px;
+  background: var(--nim-bg);
+  color: var(--nim-text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  font-size: 11px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.enhancements-tool-tooltip-title {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.enhancements-tool-tooltip-name {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+}
+
+.enhancements-tool-tooltip-raw {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--nim-text-faint);
+}
+
+.enhancements-tool-tooltip-meta {
+  margin: 0 0 6px;
+  padding: 0;
+}
+
+.enhancements-tool-tooltip-meta-row {
+  display: grid;
+  grid-template-columns: 5.5em minmax(0, 1fr);
+  column-gap: 8px;
+}
+
+.enhancements-tool-tooltip-meta dt {
+  color: var(--nim-text-faint);
+}
+
+.enhancements-tool-tooltip-meta dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.enhancements-tool-tooltip-section {
+  margin-top: 6px;
+}
+
+.enhancements-tool-tooltip-label {
+  margin-bottom: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--nim-text-faint);
+}
+
+.enhancements-tool-tooltip-pre {
+  margin: 0;
+  padding: 6px 8px;
+  max-height: 24vh;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--nim-bg-secondary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10.5px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 /* ------------------------------------------------------------------------
  * Bottom-right panel (see src/bottomPanel.tsx)
  *
