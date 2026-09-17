@@ -166,9 +166,9 @@
 .enhancements-bottom-panel {
   display: flex;
   flex-direction: column;
-  flex: 0 0 360px;
-  width: 360px;
-  min-width: 0;
+  flex: 0 0 50%;
+  width: 50%;
+  min-width: 480px;
   height: 100%;
   border-left: 1px solid var(--nim-border);
   background: var(--nim-bg);
