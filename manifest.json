@@ -1,0 +1,22 @@
+{
+  "id": "com.jaredlockhart.enhancements",
+  "name": "Nimbalyst Enhancements",
+  "version": "0.1.0",
+  "description": "Personal Nimbalyst tweaks: agent-callable session archiving, sidebar decluttering, and a tool-call sidebar next to the chat.",
+  "author": "Jared Lockhart",
+  "main": "dist/index.js",
+  "styles": "styles.css",
+  "apiVersion": "1.0.0",
+  "permissions": {
+    "ai": true
+  },
+  "contributions": {
+    "hostComponents": [
+      "ToolCallSidebarHost"
+    ],
+    "aiTools": [
+      "sessionarchive.archive_session",
+      "sessionarchive.unarchive_session"
+    ]
+  }
+}

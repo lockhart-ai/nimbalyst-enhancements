@@ -1,0 +1,146 @@
+/*
+ * Sidebar trims for the Agent Sessions panel.
+ *
+ * The host appends this stylesheet to <head> after its own CSS (see the
+ * extension loader's injectStyles), so a rule here beats the Tailwind
+ * utilities on the same element whenever specificity ties. Every selector
+ * is scoped under .session-history because WorkspaceSummaryHeader is reused
+ * in other views and only the sidebar copy should change.
+ */
+
+/* The workspace path line under the workspace name. */
+.session-history .workspace-summary-header-path {
+  display: none !important;
+}
+
+/* The "AGENT SESSIONS" section label. */
+.session-history .session-history-section-label {
+  display: none !important;
+}
+
+/* The "Search or type # to filter by tag..." row. */
+.session-history .session-history-search {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------------
+ * Tool-call sidebar (see src/toolSidebar.tsx)
+ *
+ * The mount element is appended as the last child of .agent-transcript-panel,
+ * which is already a flex row, so it lays out as a real right-hand column.
+ * ---------------------------------------------------------------------- */
+
+.enhancements-tool-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 280px;
+  width: 280px;
+  min-width: 0;
+  height: 100%;
+  border-left: 1px solid var(--nim-border);
+  background: var(--nim-bg-secondary);
+  overflow: hidden;
+}
+
+.enhancements-tool-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  font-size: 12px;
+  color: var(--nim-text);
+}
+
+.enhancements-tool-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--nim-border);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--nim-text-faint);
+}
+
+.enhancements-tool-count {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+.enhancements-tool-empty,
+.enhancements-tool-error {
+  padding: 12px;
+  color: var(--nim-text-faint);
+}
+
+.enhancements-tool-error {
+  color: var(--nim-error);
+}
+
+.enhancements-tool-list {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.enhancements-tool-row {
+  display: grid;
+  grid-template-columns: 2.25em 1.25em minmax(0, 1fr);
+  grid-template-areas:
+    "index status name"
+    ".     .      summary";
+  column-gap: 4px;
+  padding: 4px 12px 4px 8px;
+  line-height: 1.35;
+}
+
+.enhancements-tool-row:hover {
+  background: var(--nim-bg-hover);
+}
+
+.enhancements-tool-index {
+  grid-area: index;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--nim-text-faint);
+}
+
+.enhancements-tool-status {
+  grid-area: status;
+  text-align: center;
+}
+
+.enhancements-tool-status.done {
+  color: var(--nim-success);
+}
+
+.enhancements-tool-status.error {
+  color: var(--nim-error);
+}
+
+.enhancements-tool-status.running {
+  color: var(--nim-warning);
+}
+
+.enhancements-tool-name {
+  grid-area: name;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.enhancements-tool-summary {
+  grid-area: summary;
+  color: var(--nim-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
