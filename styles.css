@@ -207,4 +207,67 @@
   justify-content: center;
   color: var(--nim-text-faint);
   overflow: hidden;
+  background: #000;
+}
+
+.enhancements-bottom-panel-status {
+  margin-left: auto;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.enhancements-bottom-panel-status.up {
+  color: var(--nim-success);
+}
+
+.enhancements-bottom-panel-status.down {
+  color: var(--nim-error);
+}
+
+.enhancements-bottom-panel-status.starting {
+  color: var(--nim-warning);
+}
+
+.enhancements-bottom-panel-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #000;
+}
+
+.enhancements-bottom-panel-notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.enhancements-bottom-panel-button {
+  padding: 4px 12px;
+  border: 1px solid var(--nim-border);
+  border-radius: 4px;
+  background: var(--nim-bg-secondary);
+  color: var(--nim-text);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.enhancements-bottom-panel-button:hover {
+  background: var(--nim-bg-hover);
+  border-color: var(--nim-primary);
+}
+
+.enhancements-bottom-panel-error {
+  color: var(--nim-error);
+  font-size: 11px;
+}
+
+.enhancements-bottom-panel-command {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--nim-text-muted);
 }

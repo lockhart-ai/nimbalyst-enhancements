@@ -62,6 +62,18 @@ extension point and therefore pinned to the host build they were read from:
   which removes tool cards from the DOM entirely when off. The transcript is
   virtualized, so DOM scraping was never an option.
 
+- **Nekomata bottom panel** (`src/bottomPanel.tsx`, a `hostComponents` entry):
+  a column on the right half of the terminal bottom panel hosting
+  [Nekomata](https://github.com/lockhart-ai/nekomata) in an iframe on
+  `http://localhost:8787/`. The host's own `bottom` placement stacks extension
+  panels *under* the terminals, so this appends a column to
+  `.terminal-bottom-panel-container` and `styles.css` turns that container
+  into a row. The panel probes the server and, when it is down, offers a
+  button that starts `$HOME/Documents/nekomata/fleet_dashboard.py` through
+  the host's `extension:exec` channel (which is why the manifest now asks for
+  the `filesystem` permission). The renderer ships no content-security
+  policy, so the localhost frame loads.
+
 ## How it reaches session state
 
 Extension AI tool handlers run in the renderer realm, and the preload exposes
