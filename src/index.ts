@@ -20,6 +20,7 @@
 
 import type { ExtensionAITool, ExtensionToolResult } from '@nimbalyst/extension-sdk';
 import { ToolCallSidebarHost } from './toolSidebar';
+import { BottomRightPanelHost } from './bottomPanel';
 
 const UPDATE_METADATA_CHANNEL = 'sessions:update-metadata';
 const GET_SESSION_CHANNEL = 'sessions:get';
@@ -154,9 +155,10 @@ async function readBackSession(
 
 export const components = {};
 
-/** Mounted once at the app root; see toolSidebar.tsx. */
+/** Mounted once at the app root; see toolSidebar.tsx and bottomPanel.tsx. */
 export const hostComponents = {
   ToolCallSidebarHost,
+  BottomRightPanelHost,
 };
 
 export const aiTools: ExtensionAITool[] = [

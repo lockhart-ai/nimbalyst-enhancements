@@ -12,7 +12,8 @@
   },
   "contributions": {
     "hostComponents": [
-      "ToolCallSidebarHost"
+      "ToolCallSidebarHost",
+      "BottomRightPanelHost"
     ],
     "aiTools": [
       "sessionarchive.archive_session",
